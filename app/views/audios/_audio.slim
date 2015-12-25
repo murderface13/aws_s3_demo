@@ -1,1 +1,8 @@
+audio controls=""
+  / = audio_tag(audio.audio_file_file_name, autoplay: true)
+  source src="#{audio.audio_file.url(:origin, false)}" type="#{audio.audio_file_content_type}"
+  br
+  br
+  / source src="horse.mp3" type="audio/mpeg"
+  p Your browser does not support the audio element.
 = link_to audio.audio_file_file_name, download_audio_path(audio)

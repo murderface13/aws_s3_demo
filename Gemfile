@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'slim'
+gem 'ruby-mp3info', require:'mp3info'
 
 group :development, :test do
   gem 'byebug'

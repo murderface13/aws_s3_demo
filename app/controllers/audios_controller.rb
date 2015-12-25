@@ -17,20 +17,10 @@ class AudiosController < ApplicationController
 
   def download
     audio = Audio.find(params[:id])
-    # redirect_to audio.audio_file.url
-
-    redirect_to(audio.audio_file.expiring_url(10))
-
-    # data = open(audio.audio_file.url)
-    # send_data(
-    #   data.read,
-    #   filename: audio.audio_file_file_name,
-    #   type: audio.audio_file_content_type,
-    #   disposition: 'inline',
-    #   stream: 'true',
-    #   buffer_size: '4096'
-    # )
-
+    send_file audio.audio_file.path,
+              filename: audio.audio_file_file_name,
+              type: audio.audio_file_content_type,
+              disposition: 'attachment'
   end
 
   protected
